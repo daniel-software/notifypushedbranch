@@ -1,0 +1,2 @@
+# notifypushedbranch
+pushしたブランチを通知
