@@ -1,5 +1,4 @@
 #coding:utf-8
-
 require 'mail'
 
 if ARGV.size < 3
@@ -13,12 +12,14 @@ user_name = ARGV[2]
 
 p branch_name,repository_name,user_name
 
-Mail.delivery_method :smtp, { address:  'smtp.gmail.com',
+Mail.defaults do
+delivery_method :smtp, { address:  'smtp.gmail.com',
                               port:     587,
                               domain:   'gmail',
-                              user_name:'nofty-test',
-                              password: ($stderr.print 'password>')
+                              user_name:'dummy',
+                              password: 'dummy'
                             }
+end
 
 Mail.deliver do
     from    'watanabe@daniel-soft.com'
