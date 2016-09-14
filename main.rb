@@ -13,11 +13,12 @@ user_name = ARGV[2]
 p branch_name,repository_name,user_name
 
 Mail.defaults do
-delivery_method :smtp, { address:  'smtp.gmail.com',
+delivery_method :smtp, { address:  'mail.sakuradaniel.sakura.ne.jp',
                               port:     587,
-                              domain:   'gmail',
-                              user_name:'dummy',
-                              password: 'dummy'
+                              domain:   'daniel-soft.com',
+                              user_name:'xxxxxxxx@sakuradaniel.sakura.ne.jp',
+                              password: '********',
+                              enable_starttls_auto: false
                             }
 end
 
