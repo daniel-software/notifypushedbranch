@@ -1,5 +1,8 @@
 #coding:utf-8
+require "dotenv"
 require 'mail'
+
+Dotenv.load
 
 if ARGV.size < 3
     STDERR.print "Usage: ふるそうびたべたい\n"
@@ -16,8 +19,8 @@ Mail.defaults do
 delivery_method :smtp, { address:  'mail.sakuradaniel.sakura.ne.jp',
                               port:     587,
                               domain:   'daniel-soft.com',
-                              user_name:'xxxxxxxx@sakuradaniel.sakura.ne.jp',
-                              password: '********',
+                              user_name: ENV['MAIL_USERNAME'],
+                              password: ENV['MAIL_PASSWORD'],
                               enable_starttls_auto: false
                             }
 end
